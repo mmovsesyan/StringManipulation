@@ -207,10 +207,9 @@ public class StringManipulation {
         int count = 0;
         String[] split = s.split("[ /.,]");
         for (String s1 : split) {
-            if (s1.isEmpty()) {
-                continue;
+            if (!s1.isEmpty()) {
+                count++;
             }
-            count++;
         }
         return count;
     }
@@ -222,10 +221,9 @@ public class StringManipulation {
         String[] split = s.split("[ /.,]");
         String f = split[0];
         for (int i = 1; i < split.length; i++) {
-            if (f.length() > split[i].length()) {
-                continue;
+            if (f.length() < split[i].length()) {
+                f = split[i];
             }
-            f = split[i];
         }
         return f;
     }
