@@ -240,10 +240,9 @@ public class StringManipulation {
         String[] split = s.split("[ /,.]");
         StringBuilder sb = new StringBuilder();
         for (String value : split) {
-            if (value.isEmpty()) {
-                continue;
+            if (!value.isEmpty()) {
+                sb.append(capitalizationWord(value)).append(" ");
             }
-            sb.append(capitalizationWord(value)).append(" ");
         }
         return sb.toString();
     }
